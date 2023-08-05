@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../environments/environment'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HealthIO';
+  ngOnInit(): void {
+
+    if (environment.production) {
+      // if (location.protocol === 'http:') {
+      //   // window.location.href = location.href.replace('http', 'https');
+      //   window.location.replace("https://bggems.in");
+      // }
+    }
+  }
 }
