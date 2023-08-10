@@ -41,9 +41,8 @@ export class LoginComponent implements OnInit{
       try {
         if (LoginRes.Success == 1) {
           localStorage.setItem('token', LoginRes.Data);
-          this.toastr.info('KEYUR');
           this.spinner.hide();
-          // this.router.navigateByUrl('dashboard');
+          this.router.navigateByUrl('dashboard');
         } else if (LoginRes.Success == 2) {
           this.toastr.info('UserName or Password invalid');
           this.spinner.hide();

@@ -1,0 +1,283 @@
+<header class="page-header">
+    <div ng-view>
+      <div class="header-holder">
+        <div class="logo-container">
+        <img src="../../assets/images/submain.svg" style="height : 100px;">
+        </div>
+        <div class="htab-container">
+          <div *ngIf="CHECKTAB('Master')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_loose">
+            <i class="la la-share-alt"></i>
+            <div class="c-menu-item__title"><span>Loose</span></div>
+            <mat-menu #mat_loose="matMenu">
+              <div *ngIf="CHECKPER('MaterialCategory.aspx')" mat-menu-item (click)="AddTab('Material Category')"><i
+                  class="icon-Wish-List"></i>Material Category</div>
+              <div *ngIf="CHECKPER('MaterialMast.aspx')" mat-menu-item (click)="AddTab('Material')"><i
+                  class="icon-User-Details"></i>
+                Material</div>
+              <div *ngIf="CHECKPER('ShapeMast.aspx')" mat-menu-item (click)="AddTab('Shape')"><i
+                  class="icon-FancyStone2"></i>
+                Shape
+              </div>
+              <div *ngIf="CHECKPER('SizeMast.aspx')" mat-menu-item (click)="AddTab('Size')"><i class="icon-diamond1"></i>
+                Size
+              </div>
+              <div *ngIf="CHECKPER('MMMast.aspx')" mat-menu-item (click)="AddTab('MM')"><i class="icon-diamond1"></i> MM
+              </div>
+              <div *ngIf="CHECKPER('ColorMast.aspx')" mat-menu-item (click)="AddTab('Color')"><i
+                  class="icon-my-purchage"></i>
+                Color
+              </div>
+              <div *ngIf="CHECKPER('ClarityMast.aspx')" mat-menu-item (click)="AddTab('Clarity')"><i
+                  class="icon-grading1"></i>
+                Clarity
+              </div>
+              <div *ngIf="CHECKPER('FinishMast.aspx')" mat-menu-item (click)="AddTab('Finish')"><i
+                  class="icon-jewelry-1"></i>
+                Finish
+              </div>
+              <div *ngIf="CHECKPER('FluorescenceMast.aspx')" mat-menu-item (click)="AddTab('Fluorescence')"><i
+                  class="icon-jewelry-1"></i>
+                Fluorescence</div>
+              <div *ngIf="CHECKPER('LabMast.aspx')" mat-menu-item (click)="AddTab('Lab')"><i
+                  class="icon-lab-microscope"></i> Lab
+              </div>
+              <div *ngIf="CHECKPER('InclusionCategoryMast.aspx')" mat-menu-item (click)="AddTab('Inc Category')"><i
+                  class="icon-confirm-stone"></i> Inc Category </div>
+              <div *ngIf="CHECKPER('InclusionMaster.aspx')" mat-menu-item (click)="AddTab('Inclusion')"><i
+                  class="icon-quality"></i>
+                Inclusion
+              </div>
+              <div *ngIf="CHECKPER('OriginMaster.aspx')" mat-menu-item (click)="AddTab('Origin')"><i class="icon-map"></i>
+                Origin
+              </div>
+              <div *ngIf="CHECKPER('TreatmentMaster.aspx')" mat-menu-item (click)="AddTab('Treatment')"><i
+                  class="icon-gem"></i>
+                Treatment</div>
+              <div *ngIf="CHECKPER('Metal_KT_Mast.aspx')" mat-menu-item (click)="AddTab('KT')"><i
+                  class="icon-enterprise"></i> KT</div>
+              <div *ngIf="CHECKPER('PurTypemast.aspx')" mat-menu-item (click)="AddTab('Purchase Master')"><i
+                  class="icon-enterprise"></i> Purchase Type Master</div>
+              <div *ngIf="CHECKPER('OverToneMast.aspx')" mat-menu-item (click)="AddTab('OverTone Master')"><i
+                  class="icon-enterprise"></i> OverTone Master</div>
+              <div *ngIf="CHECKPER('IntensityMast.aspx')" mat-menu-item (click)="AddTab('Intensity Master')"><i
+                  class="icon-enterprise"></i> Intensity Master</div>
+            </mat-menu>
+          </div>
+          <div *ngIf="CHECKTAB('HR')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_hr">
+            <i class="la la-user"></i>
+            <div class="c-menu-item__title"><span>HR</span></div>
+  
+            <mat-menu #mat_hr="matMenu">
+              <div *ngIf="CHECKPER('DepartmentMast.aspx')" mat-menu-item (click)="AddTab('Department')"><i
+                  class="icon-enterprise"></i>
+                Department</div>
+              <div *ngIf="CHECKPER('DesignationMast.aspx')" mat-menu-item (click)="AddTab('Designation')"><i
+                  class="icon-User-Details"></i>
+                Designation</div>
+              <div *ngIf="CHECKPER('EmpMast.aspx')" mat-menu-item (click)="AddTab('Employee')"><i class="icon-group"></i>
+                Employee
+              </div>
+              <div *ngIf="CHECKPER('LocationMast.aspx')" mat-menu-item (click)="AddTab('Location')"><i
+                  class="icon-map"></i>
+                Location
+              </div>
+            </mat-menu>
+          </div>
+          <div *ngIf="CHECKTAB('Design')" class="tab-item mat-drop-menu " [matMenuTriggerFor]="mat_design">
+            <i class="la la-share-alt"></i>
+            <div class="c-menu-item__title"><span>Design</span></div>
+            <mat-menu #mat_design="matMenu">
+              <div *ngIf="CHECKPER('CategoryMast.aspx')" mat-menu-item (click)="AddTab('Category')"> <i
+                  class="icon-maintenance"></i>Category</div>
+              <div *ngIf="CHECKPER('SubCategoryMast.aspx')" mat-menu-item (click)="AddTab('Sub Category')"><i
+                  class="icon-admin"></i>Sub Category</div>
+              <div *ngIf="CHECKPER('MetalColorMast.aspx')" mat-menu-item (click)="AddTab('Metal Color')"><i
+                  class="icon-diamond-1"></i>Metal Color</div>
+              <div *ngIf="CHECKPER('StyleMaster.aspx')" mat-menu-item (click)="AddTab('Style')"><i
+                  class="icon-Client-List"></i>Style</div>
+            </mat-menu>
+          </div>
+          <div *ngIf="CHECKTAB('Permission')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_access">
+            <i class="icon-Appointmen"></i>
+            <div class="c-menu-item__title"><span>Access</span></div>
+            <mat-menu #mat_access="matMenu">
+              <div mat-menu-item *ngIf="CHECKPER('PermissionMasterNew.aspx')" (click)="AddTab('Permission')"> <i
+                  class="icon-ConfirmationStatus1"></i>
+                Permission</div>
+            </mat-menu>
+          </div>
+          <div *ngIf="CHECKTAB('Operation')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_design_op">
+            <i class="icon-wedding-rings"></i>
+            <div class="c-menu-item__title"><span>Design Operation</span></div>
+            <mat-menu #mat_design_op="matMenu">
+              <div *ngIf="CHECKPER('NewBlackWhiteDesign.aspx')">
+                <span class="menu-title">Black & white</span>
+                <div *ngIf="CHECKPER('BAndWNew.aspx')" (click)="AddTab('DesignNew')" mat-menu-item> <i
+                    class="icon-new-arrival"></i> New
+                </div>
+                <div *ngIf="CHECKPER('BAndWEdit.aspx')" (click)="AddTab('DesignEdit')" mat-menu-item><i
+                    class="la la-pencil-square-o"></i> Edit
+                </div>
+                <div *ngIf="CHECKPER('BAndWView.aspx')" (click)="AddTab('DeignView')" mat-menu-item><i
+                    class=" la la-eye"></i>
+                  View
+                </div>
+              </div>
+              <span *ngIf="CHECKPER('ColorDesigne.aspx') || CHECKPER('LinkDesignNew.aspx')"
+                class="menu-title pt-1 pb-0"></span>
+              <div *ngIf="CHECKPER('ColorDesigne.aspx')" (click)="AddTab('DesignColor')" mat-menu-item><i
+                  class="icon-newarrival"></i>
+                Color</div>
+              <div *ngIf="CHECKPER('LinkDesignNew.aspx')" (click)="AddTab('DesignLink')" mat-menu-item><i
+                  class="icon-wedding-rings"></i>
+                Link</div>
+            </mat-menu>
+          </div>
+          <div *ngIf="CHECKTAB('Transaction')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_trans">
+            <i class="icon-Album"></i>
+            <div class="c-menu-item__title"><span>Transaction</span></div>
+            <mat-menu #mat_trans="matMenu">
+              <div *ngIf="CHECKPER('ClientList.aspx')" (click)="AddTab('Client')" mat-menu-item> <i
+                  class="icon-Album"></i> Client
+              </div>
+              <div *ngIf="CHECKPER('BrokerList.aspx')" (click)="AddTab('Broker')" mat-menu-item><i
+                  class="icon-brokerage"></i>
+                Broker
+              </div>
+              <div *ngIf="CHECKPER('SupplierList.aspx')" (click)="AddTab('Supplier')" mat-menu-item><i
+                  class="icon-hotel-supplier"></i>
+                Supplier</div>
+              <span *ngIf="CHECKPER('purchaseEntry.aspx')" class="menu-title p-0"></span>
+              <div *ngIf="CHECKPER('purchaseEntry.aspx')">
+                <span class="menu-title">Purchase</span>
+                <div *ngIf="CHECKPER('PurchaseNew.aspx')" (click)="AddTab('PurchaseNew')" mat-menu-item> <i
+                    class="icon-new-arrival"></i>
+                  New</div>
+                <div *ngIf="CHECKPER('PurchaseEdit.aspx')" (click)="AddTab('PurchaseEdit')" mat-menu-item><i
+                    class="la la-pencil-square-o"></i>
+                  Edit
+                </div>
+                <div *ngIf="CHECKPER('PurchaseView.aspx')" (click)="AddTab('PurchaseView')" mat-menu-item><i
+                    class=" la la-eye"></i>
+                  View
+                </div>
+                <div *ngIf="CHECKPER('PurchaseProcess.aspx')" (click)="AddTab('PurchaseProcess')" mat-menu-item><i
+                    class=" la la-eye"></i> Process
+                </div>
+              </div>
+              <span *ngIf="CHECKPER('MemoIn.aspx')" class="menu-title p-0"></span>
+              <div *ngIf="CHECKPER('MemoIn.aspx')">
+                <span class="menu-title">Memo In</span>
+                <div *ngIf="CHECKPER('MemoNew.aspx')" (click)="AddTab('MemoNew')" mat-menu-item> <i
+                    class="icon-new-arrival"></i>
+                  New</div>
+                <div *ngIf="CHECKPER('MemoEdit.aspx')" (click)="AddTab('MemoEdit')" mat-menu-item><i
+                    class="la la-pencil-square-o"></i>
+                  Edit
+                </div>
+                <div *ngIf="CHECKPER('MemoView.aspx')" (click)="AddTab('MemoView')" mat-menu-item><i
+                    class=" la la-eye"></i>
+                  View
+                </div>
+                <div *ngIf="CHECKPER('MemoProcess.aspx')" (click)="AddTab('MemoProcess')" mat-menu-item><i
+                    class=" la la-eye"></i> Process
+                </div>
+              </div>
+              <span *ngIf="CHECKPER('OrderMast.aspx')" class="menu-title p-0"></span>
+              <div *ngIf="CHECKPER('OrderMast.aspx')">
+                <span class="menu-title">Order Entry</span>
+                <div *ngIf="CHECKPER('OrderNew.aspx')" (click)="AddTab('OrderNew')" mat-menu-item> <i
+                    class="icon-new-arrival"></i> New
+                </div>
+                <div *ngIf="CHECKPER('OrderEdit.aspx')" (click)="AddTab('OrderEdit')" mat-menu-item><i
+                    class="la la-pencil-square-o"></i> Edit
+                </div>
+                <div *ngIf="CHECKPER('OrderView.aspx')" (click)="AddTab('OrderView')" mat-menu-item><i
+                    class=" la la-eye"></i>
+                  View</div>
+              </div>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="other-nav">
+          <div class="dollar-rate" style="cursor: pointer;">
+            <span (click)="DollarToINR()" class="dr-box">{{DolToINR}}</span>
+          </div>
+          <div class="header-right-nav">
+            <div class="hrn-item" [matMenuTriggerFor]="mat_pro_nav">
+              <div class="hprofile-img">
+                <img src="../../assets/images/avatar.png" class="img-fluid" alt="">
+              </div>
+              <mat-menu #mat_pro_nav="matMenu">
+                <div class="profile-edit-nav">
+                  <img src="../../assets/images/avatar.png" class="img-fluid" alt="">
+                  <i class="la la-gear pen_icon"></i>
+                </div>
+                <span class="menu-title p-0"></span>
+                <div mat-menu-item> <i class="la la-key"></i> Change Password
+                </div>
+              </mat-menu>
+            </div>
+            <div class="hrn-item">
+              <i class="la la-power-off" matTooltip="LOGOUT" (click)="LogOut()"></i>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <ng-template #mymodal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container dol-input">
+            <div class="row align-items-center">
+              <div class="col-md-12 col-12  dol-input mb-1 pl-0">
+                <mat-form-field appearance="outline" ngDefaultControl>
+                  <mat-label>Old Password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" name="nm" [(ngModel)]="OLDPASS">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-12 col-12  dol-input mb-1 pl-0">
+                <mat-form-field appearance="outline" ngDefaultControl>
+                  <mat-label>New Password</mat-label>
+                  <input matInput [type]="Newhide ? 'password' : 'text'" name="nm" [(ngModel)]="NEWPASS">
+                  <mat-icon matSuffix (click)="Newhide = !Newhide">{{Newhide ? 'visibility_off' : 'visibility'}}
+                  </mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-12 col-12  dol-input mb-1 pl-0">
+                <mat-form-field appearance="outline" ngDefaultControl>
+                  <mat-label>ReEnter Password</mat-label>
+                  <input matInput [type]="ReNewhide ? 'password' : 'text'" name="nm" (change)="comparepass()"
+                    [(ngModel)]="REENTERPASS">
+                  <mat-icon matSuffix (click)="ReNewhide = !ReNewhide">{{ReNewhide ? 'visibility_off' : 'visibility'}}
+                  </mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button ngbAutofocus id="Close" type="button" class="btn btn-outline-dark"
+            (click)="modal.close('Cross click')">Close</button>
+          <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Save click')">Save</button>
+        </div>
+      </ng-template>
+    </div>
+  </header>
+  
+  
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="large" color="#934d4d" type="none">
+    <div class="la-ball-scale-ripple-multiple la-2x">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </ngx-spinner>
+  
