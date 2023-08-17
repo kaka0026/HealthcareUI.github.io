@@ -3,17 +3,26 @@ import { DashboardService } from '../Services/dashboard.service';
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { NgxSpinnerService } from "ngx-spinner";
-import { JwtHelperService } from "@auth0/angular-jwt";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from "../Services/login.service";
+import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, DoCheck {
-   decodeHelper = new JwtHelperService();
-  // decodedTkn = this.decodeHelper.decodeToken(localStorage.getItem("token"));
+  decodeHelper = new JwtHelperService();
+  decodedTkn = this.decodeHelper.decodeToken("");
+  NAME = "";
+  ADDRESS = "";
+  PHONE_NO = 0;
+  EMAIL_ID = "";
+  DOB = "";
+  SEX = "";
+  AGE = 0;
+  MARITAL_STATUS = "";
+  IMAGE = "";
 
   hide = true;
   Newhide = true;
@@ -40,7 +49,26 @@ export class HeaderComponent implements OnInit, DoCheck {
     this.pageTitle = "Dashboard";
   }
   ngOnInit(): void {
-    this.DollarToINR();
+    this.decodedTkn = this.decodeToken()
+    this.NAME = this.decodedTkn.NAME
+    this.ADDRESS = this.decodedTkn.ADDRESS
+    this.PHONE_NO = this.decodedTkn.PHONE_NO
+    this.EMAIL_ID = this.decodedTkn.EMAIL_ID
+
+
+    var d = new Date(this.decodedTkn.DOB);
+    let Fromdate =
+      ("0" + d.getDate()).slice(-2) +
+      "/" +
+      ("0" + (d.getMonth() + 1)).slice(-2) +
+      "/" +
+      +d.getFullYear();
+
+    this.DOB = Fromdate
+    this.SEX = this.decodedTkn.SEX
+    this.AGE = this.decodedTkn.AGE
+    this.MARITAL_STATUS = this.decodedTkn.MARITAL_STATUS
+    this.IMAGE = this.decodedTkn.IMAGE
     this.DashboardSer.sharedPageName$.subscribe((sharedPageName) => {
       try {
         this.pageTitle = sharedPageName ? sharedPageName : 'Dashboard';
@@ -48,10 +76,20 @@ export class HeaderComponent implements OnInit, DoCheck {
       }
 
     })
-
-   
-
   }
+
+  decodeToken() {
+    const token = localStorage.getItem("token");
+    let decodedTkn = this.decodeHelper.decodeToken("");
+    if (token) {
+      decodedTkn = this.decodeHelper.decodeToken(token);
+     
+    } else {
+      decodedTkn = this.decodeHelper.decodeToken("");
+    }
+    return decodedTkn;
+  }
+
   CHECKPER(e: any): boolean {
     // if (this.PERARR.filter(x => x == e).length == 0) {
     //   return false
