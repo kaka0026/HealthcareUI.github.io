@@ -46,6 +46,8 @@ header.page-header {
   }
   header.page-header {
     box-shadow: 0 0 50px rgba(192, 197, 206, 0.5);
+    max-width: 100%;
+    min-width: fit-content;
   }
   .hrn-item {
     cursor: pointer;

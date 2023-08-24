@@ -2,8 +2,26 @@
     <div ng-view>
       <div class="header-holder">
         <div class="logo-container">
+          <img src="../../assets/images/{{IMAGE}}" style="height : 100px;">
+        </div>
+        <div class="htab-container">
+          Name: {{NAME}}<br>
+          Address: {{ADDRESS}}<br>
+          Gender: {{SEX}}<br>
+          Age: {{AGE}}
+        </div>
+        <div class="other-nav">
+          Phone No: {{PHONE_NO}}<br>
+          Email Id: {{EMAIL_ID}}<br>
+          Date Of Birth: {{DOB}}<br>
+          Matital Status: {{MARITAL_STATUS}}
+        </div>
+      </div>
+      <div class="header-holder">
+        <div class="logo-container">
         <img src="../../assets/images/submain.svg" style="height : 100px;">
         </div>
+       
         <div class="htab-container">
           <div *ngIf="CHECKTAB('Master')" class="tab-item mat-drop-menu" [matMenuTriggerFor]="mat_loose">
             <i class="la la-share-alt"></i>
